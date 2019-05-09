@@ -1,12 +1,12 @@
 {
-  "name": "element-extra-components",
+  "name": "element-ui-extra",
   "version": "0.1.0",
   "description": "Extra components for element-ui",
-  "main": "dist/element-extra.js",
+  "main": "dist/element-ui-extra.js",
   "scripts": {
     "upgrade:check": "ncu",
     "upgrade:apply": "ncu -a",
-    "build": "rm -rf dist && cd src && vue build -t lib -n ElementExtra && mv dist/ElementExtra.umd.min.js dist/element-extra.js && mv dist/ ../ && rm -rf node_modules",
+    "build": "rm -rf dist && cd src && vue build -t lib -n ElementUiExtra && mv dist/ElementUiExtra.umd.min.js dist/element-ui-extra.js && mv dist/ ../ && rm -rf node_modules",
     "start": "npm run dev",
     "test": "cypress run --dev --record false",
     "dev": "cd src/docs && vue serve"

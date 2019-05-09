@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["ElementExtra"] = factory();
+		exports["ElementUiExtra"] = factory();
 	else
-		root["ElementExtra"] = factory();
+		root["ElementUiExtra"] = factory();
 })((typeof self !== 'undefined' ? self : this), function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -409,10 +409,6 @@ function addThousandSeparator(integer, separator) {
   return integer.replace(/(\d)(?=(?:\d{3})+\b)/gm, `$1${separator}`);
 }
 
-function currencyToIntegerAndDecimal(float) {
-  return toStr(float).split('.');
-}
-
 function joinIntegerAndDecimal(integer, decimal, separator) {
   return decimal ? integer + separator + decimal : integer;
 }
@@ -513,7 +509,6 @@ var web_dom_iterable = __webpack_require__("de94");
 
 
 
-
 /* harmony default export */ var component = ({
   name: 'Money',
   props: {
@@ -575,7 +570,7 @@ var web_dom_iterable = __webpack_require__("de94");
 
   }
 });
-// CONCATENATED MODULE: ../node_modules/vue-loader/lib/template-compiler?{"id":"data-v-61278164","hasScoped":false,"optionsId":"0","buble":{"transforms":{}}}!../node_modules/vue-loader/lib/selector.js?type=template&index=0!./components/el-money/component.vue
+// CONCATENATED MODULE: ../node_modules/vue-loader/lib/template-compiler?{"id":"data-v-052755c8","hasScoped":false,"optionsId":"0","buble":{"transforms":{}}}!../node_modules/vue-loader/lib/selector.js?type=template&index=0!./components/el-money/component.vue
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-input',{directives:[{name:"money",rawName:"v-money",value:({precision: _vm.precision, decimal: _vm.decimal, thousands: _vm.thousands, prefix: _vm.prefix, suffix: _vm.suffix}),expression:"{precision, decimal, thousands, prefix, suffix}"}],staticClass:"v-money",attrs:{"type":"tel","value":_vm.display},on:{"input":_vm.onInput}})}
 var staticRenderFns = []
 
@@ -716,7 +711,6 @@ var Component = normalizeComponent(
 /* harmony default export */ var filter = (function (val, opt = options) {
   return format(val, el_money_assign(options, opt));
 });
-;
 // CONCATENATED MODULE: ./components/el-money/index.js
 
 
@@ -1023,17 +1017,17 @@ function directive_event(name) {
 
     refresh(value) {
       this.display = value;
-      var value = masker(value, this.mask, this.masked, this.tokens);
+      var newValue = masker(value, this.mask, this.masked, this.tokens);
 
-      if (value !== this.lastValue) {
-        this.lastValue = value;
-        this.$emit('input', value);
+      if (newValue !== this.lastValue) {
+        this.lastValue = newValue;
+        this.$emit('input', newValue);
       }
     }
 
   }
 });
-// CONCATENATED MODULE: ../node_modules/vue-loader/lib/template-compiler?{"id":"data-v-0391d9af","hasScoped":false,"optionsId":"0","buble":{"transforms":{}}}!../node_modules/vue-loader/lib/selector.js?type=template&index=0!./components/el-mask/component.vue
+// CONCATENATED MODULE: ../node_modules/vue-loader/lib/template-compiler?{"id":"data-v-c4f57efe","hasScoped":false,"optionsId":"0","buble":{"transforms":{}}}!../node_modules/vue-loader/lib/selector.js?type=template&index=0!./components/el-mask/component.vue
 var component_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-input',{directives:[{name:"mask",rawName:"v-mask",value:(_vm.mask),expression:"mask"}],attrs:{"type":"text","value":_vm.display},on:{"input":_vm.onInput}})}
 var component_staticRenderFns = []
 
@@ -1779,4 +1773,4 @@ module.exports = function (it) {
 
 /******/ });
 });
-//# sourceMappingURL=ElementExtra.umd.js.map
+//# sourceMappingURL=ElementUiExtra.umd.js.map

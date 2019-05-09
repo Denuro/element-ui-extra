@@ -10,7 +10,6 @@
 import money from './directive'
 import defaults from './options'
 import {format, unformat} from './utils'
-import assign from './assign'
 
 export default {
   name: 'Money',

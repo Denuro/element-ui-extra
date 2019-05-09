@@ -45,10 +45,6 @@ function addThousandSeparator (integer, separator) {
   return integer.replace(/(\d)(?=(?:\d{3})+\b)/gm, `$1${separator}`)
 }
 
-function currencyToIntegerAndDecimal (float) {
-  return toStr(float).split('.')
-}
-
 function joinIntegerAndDecimal (integer, decimal, separator) {
   return decimal ? integer + separator + decimal : integer
 }
