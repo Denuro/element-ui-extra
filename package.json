@@ -1,0 +1,82 @@
+{
+  "name": "element-extra-components",
+  "version": "0.1.0",
+  "description": "Extra components for element-ui",
+  "main": "dist/element-extra.js",
+  "scripts": {
+    "upgrade:check": "ncu",
+    "upgrade:apply": "ncu -a",
+    "build": "rm -rf dist && cd src && vue build -t lib -n ElementExtra && mv dist/ElementExtra.umd.min.js dist/element-extra.js && mv dist/ ../ && rm -rf node_modules",
+    "start": "npm run dev",
+    "test": "cypress run --dev --record false",
+    "dev": "cd src/docs && vue serve"
+  },
+  "files": [
+    "dist/",
+    "src/*.js",
+    "src/*.vue"
+  ],
+  "keywords": [
+    "vue",
+    "element-ui",
+    "mask",
+    "money"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    }
+  },
+  "author": "Darlan Ullmann <darlanullmann@gmail.com> (http://denuro.com/)",
+  "license": "MIT",
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          "env"
+        ]
+      },
+      "production": {
+        "presets": [
+          "@vue/app"
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ]
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "last 2 chrome versions"
+  ],
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-beta.10",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.10",
+    "@vue/cli-service": "^3.0.0-beta.10",
+    "babel-jest": "^22.4.3",
+    "babel-preset-vue-app": "^2.0.0",
+    "codeceptjs-puppeteer": "^1.2.0",
+    "cypress": "^2.1.0",
+    "npm-check-updates": "^2.14.2",
+    "npmlog": "4.1.2",
+    "start-server-and-test": "^1.4.1",
+    "vue": "^2.5.16",
+    "vue-loader": "^14.2.2",
+    "vue-template-compiler": "^2.5.16"
+  }
+}
