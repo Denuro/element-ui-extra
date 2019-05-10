@@ -702,21 +702,6 @@ var Component = normalizeComponent(
 /* harmony default export */ var filter = (function (val, opt = options) {
   return format(val, el_money_assign(options, opt));
 });
-// CONCATENATED MODULE: ./components/el-money/index.js
-
-
-
-function install(Vue) {
-  Vue.component('el-money', el_money_component);
-  Vue.filter('money', filter);
-}
-
-/* harmony default export */ var el_money = (install);
- // Install by default if included from script tag
-
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(install);
-}
 // CONCATENATED MODULE: ./components/el-mask/maskit.js
 function maskit(value, mask, masked = true, tokens) {
   value = value || '';
@@ -852,22 +837,6 @@ function dynamicMask(maskit, masks, tokens) {
   // L	Any letter (All upper case character will be mapped to lowercase)
   // $	Escape character, used to escape any of the special formatting characters.
 
-});
-// CONCATENATED MODULE: ./components/el-mask/filter.js
-
-
-/* harmony default export */ var el_mask_filter = (function (val, binding) {
-  var config = binding || {};
-
-  if (Array.isArray(config) || typeof config === 'string') {
-    config = {
-      masked: true,
-      mask: config,
-      tokens: el_mask_tokens
-    };
-  }
-
-  return masker(val, config.mask, config.masked, config.tokens);
 });
 // CONCATENATED MODULE: ./components/el-mask/directive.js
 
@@ -1049,39 +1018,50 @@ var component_Component = normalizeComponent(
 
 /* harmony default export */ var components_el_mask_component = (component_Component.exports);
 
-// CONCATENATED MODULE: ./components/el-mask/index.js
+// CONCATENATED MODULE: ./components/el-mask/filter.js
 
 
+/* harmony default export */ var el_mask_filter = (function (val, binding) {
+  var config = binding || {};
 
-function el_mask_install(Vue) {
-  Vue.component(components_el_mask_component.name, components_el_mask_component);
-  Vue.filter('mask', el_mask_filter);
-}
+  if (Array.isArray(config) || typeof config === 'string') {
+    config = {
+      masked: true,
+      mask: config,
+      tokens: el_mask_tokens
+    };
+  }
 
-/* harmony default export */ var el_mask = (el_mask_install);
- // Install by default if included from script tag
-
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(el_mask_install);
-}
+  return masker(val, config.mask, config.masked, config.tokens);
+});
 // CONCATENATED MODULE: ./index.js
 
 
 
-function index_install(Vue) {
-  Vue.install('el-money', el_money);
-  Vue.install('el-mask', el_mask);
+
+
+
+
+function install(Vue) {
+  Vue.component('el-money', el_money_component);
+  Vue.filter('money', filter);
+  Vue.component(components_el_mask_component.name, components_el_mask_component);
+  Vue.filter('mask', el_mask_filter);
 }
 
-/* harmony default export */ var index = (index_install);
+/* harmony default export */ var index = (install);
  // Install by default if included from script tag
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(index_install);
+  window.Vue.use(install);
 }
 // CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
-/* concated harmony reexport ElMoney */__webpack_require__.d(__webpack_exports__, "ElMoney", function() { return el_money; });
-/* concated harmony reexport ElMask */__webpack_require__.d(__webpack_exports__, "ElMask", function() { return el_mask; });
+/* concated harmony reexport ElMoney */__webpack_require__.d(__webpack_exports__, "ElMoney", function() { return el_money_component; });
+/* concated harmony reexport MoneyFilter */__webpack_require__.d(__webpack_exports__, "MoneyFilter", function() { return filter; });
+/* concated harmony reexport MoneyDirective */__webpack_require__.d(__webpack_exports__, "MoneyDirective", function() { return directive; });
+/* concated harmony reexport ElMask */__webpack_require__.d(__webpack_exports__, "ElMask", function() { return components_el_mask_component; });
+/* concated harmony reexport MaskFilter */__webpack_require__.d(__webpack_exports__, "MaskFilter", function() { return el_mask_filter; });
+/* concated harmony reexport MaskDirective */__webpack_require__.d(__webpack_exports__, "MaskDirective", function() { return el_mask_directive; });
 
 
 /* harmony default export */ var entry_lib = __webpack_exports__["default"] = (index);
