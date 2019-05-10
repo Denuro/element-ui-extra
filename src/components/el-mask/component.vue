@@ -1,5 +1,7 @@
 <template>
-<el-input type="text" v-mask="mask" :value="display" @input="onInput"><slot></slot></el-input>
+  <el-input type="text" v-mask="mask" :value="display" @input="onInput">
+    <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
+  </el-input>
 </template>
 
 <script>

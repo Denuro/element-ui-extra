@@ -3,7 +3,9 @@
          :value="display"
          @input="onInput"
          v-money="{precision, decimal, thousands, prefix, suffix}"
-         class="v-money"><slot></slot></el-input>
+         class="v-money">
+          <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
+  </el-input>
 </template>
 
 <script>
