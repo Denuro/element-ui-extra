@@ -1,5 +1,5 @@
 <template>
-<el-input type="text" v-mask="mask" :value="display" @input="onInput" />
+<el-input type="text" v-mask="mask" :value="display" @input="onInput"><slot></slot></el-input>
 </template>
 
 <script>
