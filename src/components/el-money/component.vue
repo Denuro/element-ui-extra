@@ -4,7 +4,7 @@
          @input="onInput"
          v-money="{precision, decimal, thousands, prefix, suffix}"
          class="v-money"
-         v-bind="$attr" 
+         v-bind="$attrs" 
          v-on="$listeners" >
           <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
   </el-input>
