@@ -1,7 +1,7 @@
 import defaults from './options'
 
 function format (input, opt = defaults) {
-  if (input === undefined) input = 0
+  if (input === undefined || isNaN(input)) input = 0
   if (!isNaN(input)) {
     input = Number(input).toFixed(fixed(opt.precision))
   }
